@@ -40,7 +40,7 @@ def PseudoRandomStream(S, n):
 # this is the "key"
 sharedSecret = hashGen(32)  # This is "hardCoded" becuase i lack the time to make it connected to server/client
 
-plaintext = ConvertTextToBinary.DecryptStep()
+plaintext = ConvertTextToBinary.DecryptStep("Ciphertext.txt")
 
 BinaryLength = len(plaintext)
 

@@ -1,11 +1,17 @@
-def EncryptStep():
-    f = open('plaintext.txt', 'r')
-    file = f.read().encode()
-    return file
+def EncryptStep(fileName):
+    try:
+        with open(fileName, 'r') as file:
+            file = file.read().encode()
+        return file
+    except FileNotFoundError:
+            print("The file 'plaintext.txt' was not found in the current directory.")
+    except IOError:
+            print("There was an error opening or reading the file 'plaintext.txt'.")
+    return None
 
 
-def DecryptStep():
-    f = open('Ciphertext.txt', 'r')
+def DecryptStep(fileName):
+    f = open(fileName, 'r')
     file = f.read()
     x = bytes.fromhex(file)
     return x
